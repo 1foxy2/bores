@@ -23,7 +23,7 @@
       "name": "BORES_BORE_HOLDING",
       "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
       "parameters": {
-        "class": "net/foxy/bores/base/ModEnums",
+        "class": "net/foxy/bores/base/ModClientEnums",
         "field": "BORE_STANDING_POS"
       }
     },
@@ -32,7 +32,7 @@
       "name": "BORES_BORE_SINGLE_HOLDING",
       "constructor": "(ZLnet/neoforged/neoforge/client/IArmPoseTransformer;)V",
       "parameters": {
-        "class": "net/foxy/bores/base/ModEnums",
+        "class": "net/foxy/bores/base/ModClientEnums",
         "field": "BORE_SINGLE_STANDING_POS"
       }
     }

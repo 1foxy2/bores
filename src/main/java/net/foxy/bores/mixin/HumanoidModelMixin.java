@@ -1,6 +1,6 @@
 package net.foxy.bores.mixin;
 
-import net.foxy.bores.base.ModEnums;
+import net.foxy.bores.base.ModClientEnums;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.model.HumanoidModel;
 import org.objectweb.asm.Opcodes;
@@ -27,7 +27,7 @@ public class HumanoidModelMixin {
             )
     )
     public HumanoidModel.ArmPose removeBob(HumanoidModel.ArmPose original) {
-        return original == ModEnums.BORE_SINGLE_STANDING_POS.getValue() || original == ModEnums.BORE_STANDING_POS.getValue() || rightArmPose == ModEnums.BORE_STANDING_POS.getValue() ? HumanoidModel.ArmPose.SPYGLASS : original;
+        return original == ModClientEnums.BORE_SINGLE_STANDING_POS.getValue() || original == ModClientEnums.BORE_STANDING_POS.getValue() || rightArmPose == ModClientEnums.BORE_STANDING_POS.getValue() ? HumanoidModel.ArmPose.SPYGLASS : original;
     }
 
     @ModifyExpressionValue(
@@ -40,6 +40,6 @@ public class HumanoidModelMixin {
             )
     )
     public HumanoidModel.ArmPose removeBobRight(HumanoidModel.ArmPose original) {
-        return original == ModEnums.BORE_SINGLE_STANDING_POS.getValue() || original == ModEnums.BORE_STANDING_POS.getValue() || leftArmPose == ModEnums.BORE_STANDING_POS.getValue() ? HumanoidModel.ArmPose.SPYGLASS : original;
+        return original == ModClientEnums.BORE_SINGLE_STANDING_POS.getValue() || original == ModClientEnums.BORE_STANDING_POS.getValue() || leftArmPose == ModClientEnums.BORE_STANDING_POS.getValue() ? HumanoidModel.ArmPose.SPYGLASS : original;
     }
 }

@@ -4,10 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.SheetedDecalTextureGenerator;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.foxy.bores.BoresMod;
-import net.foxy.bores.base.ModEnums;
-import net.foxy.bores.base.ModItems;
-import net.foxy.bores.base.ModParticles;
-import net.foxy.bores.base.ModSounds;
+import net.foxy.bores.base.*;
 import net.foxy.bores.client.BoreRenderer;
 import net.foxy.bores.client.BoreSoundInstance;
 import net.foxy.bores.client.BoresClientConfig;
@@ -183,7 +180,7 @@ public class ModClientEvents {
             @Override
             public HumanoidModel.@Nullable ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
                 return !entityLiving.getMainHandItem().isEmpty() && !entityLiving.getOffhandItem().isEmpty() ?
-                        ModEnums.BORE_SINGLE_STANDING_POS.getValue() : ModEnums.BORE_STANDING_POS.getValue();
+                        ModClientEnums.BORE_SINGLE_STANDING_POS.getValue() : ModClientEnums.BORE_STANDING_POS.getValue();
             }
         }, ModItems.BORE);
     }
