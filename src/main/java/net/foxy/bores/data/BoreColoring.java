@@ -15,9 +15,10 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class BoreColoring extends CustomRecipe {
-    public static final MapCodec<BoreColoring> MAP_CODEC = MapCodec.unit(new BoreColoring());
+    public static final BoreColoring INSTANCE = new BoreColoring();
+    public static final MapCodec<BoreColoring> MAP_CODEC = MapCodec.unit(INSTANCE);
     public static final StreamCodec<RegistryFriendlyByteBuf, BoreColoring> STREAM_CODEC =
-            StreamCodec.unit(new BoreColoring());
+            StreamCodec.unit(INSTANCE);
     public static final RecipeSerializer<BoreColoring> SERIALIZER = new RecipeSerializer<>(MAP_CODEC, STREAM_CODEC);
     public static final List<DyeColor> ALLOWED_COLORS = List.of(
             DyeColor.WHITE,
@@ -42,7 +43,8 @@ public class BoreColoring extends CustomRecipe {
                 if (itemstack.getItem() instanceof BoreItem) {
                     i++;
                 } else {
-                    if (!ALLOWED_COLORS.contains(itemstack.get(DataComponents.DYE))) {
+                    DyeColor dyeColor = itemstack.get(DataComponents.DYE);
+                    if (dyeColor == null || !ALLOWED_COLORS.contains(dyeColor)) {
                         return false;
                     }
 

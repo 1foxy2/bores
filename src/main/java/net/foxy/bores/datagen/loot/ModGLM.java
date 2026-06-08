@@ -21,7 +21,9 @@ public class ModGLM extends GlobalLootModifierProvider {
     protected void start() {
         add(
                 "bores_loot_modifier",
-                new AddTableLootModifier(new LootItemCondition[] {new LootTableIdCondition.Builder(BuiltInLootTables.ABANDONED_MINESHAFT.identifier()).build()}, ModLootTables.ABANDONED_MINESHAFT)
+                new AddTableLootModifier(
+                        new LootItemCondition[] {new LootTableIdCondition.Builder(BuiltInLootTables.ABANDONED_MINESHAFT.identifier()).build()},
+                        1000, ModLootTables.ABANDONED_MINESHAFT)
         );
     }
 }
